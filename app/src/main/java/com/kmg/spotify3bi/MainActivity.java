@@ -12,6 +12,8 @@ import com.bumptech.glide.Glide;
 
 public class MainActivity extends AppCompatActivity {
 
+    MediaPlayer player;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,8 +22,12 @@ public class MainActivity extends AppCompatActivity {
 
         Glide.with(this).load("https://img.youtube.com/vi/tc-bxi26GSA/0.jpg").into(imageView);
 
+        player = MediaPlayer.create(getApplicationContext(), R.raw.bebe_procurar);
     }
 
+    public void play(View view) {
+        player.start();
+    }
 }
 
 
